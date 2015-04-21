@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento admin config
+ *
+ * @author Magento
+ */
+-->
+<config>
+    <menu>
+         <personalization translate="title" module="rees46_personalization">
+            <title>Personalization</title>
+            <sort_order>65</sort_order>
+            <children>
+                <overview translate="title" module="rees46_personalization">
+                    <title>Overview</title>
+                    <action>adminhtml/personalization</action>
+                    <sort_order>50</sort_order>
+                </overview>
+            </children>
+         </personalization>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <personalization translate="title" module="rees46_personalization">
+                                        <title>Overview</title>
+                                    </personalization>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
