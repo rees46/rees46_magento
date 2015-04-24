@@ -87,6 +87,12 @@ class Rees46_Personalization_Model_Observer
 	 * @return array
 	 */
 	private function _prepareCommonProductInfo(Mage_Catalog_Model_Product $product) {
+		$images = $product->getMediaGalleryImages();
+		if($images && $images->count() > 0) {
+			$image = $images->getFirstItem()->getUrl();
+		} else {
+			$image = null;
+		}
 		return array(
 			'item_id' => $product->getId(),
 			'name' => $product->getName(),
@@ -96,7 +102,7 @@ class Rees46_Personalization_Model_Observer
 			'is_available' => $product->isAvailable(),
 			'locations' => null,
 			'url' => null,
-			'image_url' => null,
+			'image_url' => $image,
 			'tags' => null,
 			// @todo: не забыть трекинг рекомендера
 			'recommended_by' => null
