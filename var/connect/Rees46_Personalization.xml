@@ -1,0 +1,124 @@
+<_>
+   <form_key>0wpS5unC9qubOVxU</form_key>
+   <_create/>
+   <name>Rees46_Personalization</name>
+   <channel>community</channel>
+   <version_ids>
+      <version_ids>2</version_ids>
+   </version_ids>
+   <summary>REES46 analyzes customers activity and recommend them best goods they are willing to buy for greater conversion and ARPPU.</summary>
+   <description>Personal recommendations for e-commerce and e-mail notifications. Increases conversion rate and revenue without changing costs for advertisement. Automatically.
+
+Behaviour analysis: analyzes activity of every your customer an stores it anonymously. REES46 collects these actions: product view, product added or removed from cart, order created.
+
+Then REES46 recommends appropriate products to every individual customer using blocks of recommended products:
+
+- Personalized Popular Products.
+- Personalized Similar Products.
+- Personalized Related Products.
+- Personalized Interesting Products.
+- Recently Viewed Products.
+- People Buying It Right Now.
+
+REES46 increases efficiency of e-commerce website up to 24% (in revenue).</description>
+   <license>GNU</license>
+   <license_uri/>
+   <version>3.2.6</version>
+   <stability>stable</stability>
+   <notes>Now get previews of photos to recommended products.</notes>
+   <authors>
+      <name>
+         <name>REES46</name>
+      </name>
+      <user>
+         <user>mkechinov</user>
+      </user>
+      <email>
+         <email>kechinoff@gmail.com</email>
+      </email>
+   </authors>
+   <depends_php_min>5.2.1</depends_php_min>
+   <depends_php_max>6.0.0</depends_php_max>
+   <depends>
+      <package>
+         <name>
+            <name/>
+         </name>
+         <channel>
+            <channel/>
+         </channel>
+         <min>
+            <min/>
+         </min>
+         <max>
+            <max/>
+         </max>
+         <files>
+            <files>     </files>
+         </files>
+      </package>
+      <extension>
+         <name>
+            <name>Core</name>
+         </name>
+         <min>
+            <min/>
+         </min>
+         <max>
+            <max/>
+         </max>
+      </extension>
+   </depends>
+   <contents>
+      <target>
+         <target>magelocal</target>
+         <target>magecommunity</target>
+         <target>magedesign</target>
+         <target>magelocal</target>
+         <target>magelocal</target>
+         <target>magelocal</target>
+         <target>mageetc</target>
+         <target>magelocale</target>
+      </target>
+      <path>
+         <path/>
+         <path>Rees46</path>
+         <path>adminhtml/default/default/layout/rees46_personalization.xml</path>
+         <path>adminhtml/default/default/template/rees46</path>
+         <path>frontend/base/default/layout/rees46_personalization.xml</path>
+         <path>frontend/base/default/template/rees46</path>
+         <path>modules/Rees46_Personalization.xml</path>
+         <path/>
+      </path>
+      <type>
+         <type>file</type>
+         <type>dir</type>
+         <type>file</type>
+         <type>dir</type>
+         <type>file</type>
+         <type>dir</type>
+         <type>file</type>
+         <type>dir</type>
+      </type>
+      <include>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+      </include>
+      <ignore>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+      </ignore>
+   </contents>
+</_>

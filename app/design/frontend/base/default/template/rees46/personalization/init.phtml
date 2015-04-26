@@ -1,0 +1,114 @@
+<?php if (Mage::helper('rees46_personalization')->isEnabled()): ?>
+	<? $rees46_api_key = $this->helper('rees46_personalization')->getAPIKey(); ?>
+	<? if($rees46_api_key != false): ?>
+		<!-- @rees46 -->
+		<script src="http://cdn.rees46.com/rees46_script2.js"></script>
+		<script type="text/javascript">
+			REES46_CART = <?= json_encode($this->helper('rees46_personalization')->getCartProductIds()); ?>;
+			jQuery(document).ready(function(){
+				var user_data = null;
+				<? if (Mage::getSingleton('customer/session')->isLoggedIn()): ?>
+					var user_data = {
+						id: <?= Mage::getSingleton('customer/session')->getCustomer()->getID() ?>,
+						email: '<?= Mage::getSingleton('customer/session')->getCustomer()->getEmail() ?>'
+					};
+				<? endif; ?>
+				REES46.init('<?= $this->helper('rees46_personalization')->getAPIKey() ?>', user_data, function() {
+					<? $events = Mage::helper('rees46_personalization/event')->getEventsQueue(true) ?>
+					<? foreach($events as $event): ?>
+						<? if($event['name'] == 'view' || $event['name'] == 'cart' || $event['name'] == 'remove_from_cart'): ?>
+							REES46.pushData('<?= $event['name'] ?>', {
+								item_id: '<?= $event['data']['item_id'] ?>',
+								name: '<?= $event['data']['name'] ?>',
+								description: '<?= $event['data']['description'] ?>',
+								price: '<?= $event['data']['price'] ?>',
+								is_available: '<?= intval($event['data']['is_available']) ?>',
+								categories: [<?= implode(',', $event['data']['categories']) ?>],
+								<? if($event['data']['recommended_by']): ?>
+									recommended_by: '<?= $event['data']['recommended_by'] ?>',
+								<? endif; ?>
+							});
+						<? endif; ?>
+						<? if($event['name'] == 'purchase'): ?>
+							REES46.pushData('purchase', [
+								<? foreach($event['data']['products'] as $product): ?>
+									{
+										item_id: '<?= $product['item_id'] ?>',
+										name: '<?= $product['name'] ?>',
+										description: '<?= $product['description'] ?>',
+										price: '<?= $product['price'] ?>',
+										is_available: '<?= intval($product['is_available']) ?>',
+										categories: [<?= implode(',', $product['categories']) ?>],
+										amount: <?= $product['amount'] ?>,
+										<? if($product['recommended_by']): ?>
+											recommended_by: '<?= $product['recommended_by'] ?>',
+										<? endif; ?>
+									},
+								<? endforeach; ?>
+							],
+							'<?= $event['data']['order_id'] ?>');
+						<? endif; ?>
+					<? endforeach; ?>
+
+					jQuery('.rees46.rees46-recommend').each(function(){
+						var recommenderBlock = jQuery(this);
+						var recommenderType = recommenderBlock.data('type');
+						switch(recommenderType) {
+							case 'interesting':
+							case 'also_bought':
+							case 'similar':
+							case 'recently_viewed':
+							case 'buying_now':
+								REES46.recommend({
+									recommender_type: recommenderType,
+									item: recommenderBlock.data('item'),
+									cart: REES46_CART
+								}, function(data){
+									REES46_Recommender_Callback(recommenderType, recommenderBlock, data);
+								});
+								break;
+							case 'popular':
+								REES46.recommend({
+									recommender_type: recommenderType,
+									category: recommenderBlock.data('category')
+								}, function(data){
+									REES46_Recommender_Callback(recommenderType, recommenderBlock, data);
+								});
+								break;
+							case 'see_also':
+								REES46.recommend({
+									recommender_type: recommenderType,
+									cart: REES46_CART
+								}, function(data){
+									REES46_Recommender_Callback(recommenderType, recommenderBlock, data);
+								});
+								break;
+						}
+					});
+
+					function REES46_Recommender_Callback(recommenderType, block, data) {
+						// @todo: ввести в настройках параметр минимального количества рекомендаций для отображения
+						var min_products = 1;
+						if(data.length > min_products) {
+							jQuery.get(
+								'/personalization/block',
+								{
+									ids: data,
+									type: recommenderType,
+									minimum: min_products
+								},
+								function(response) {
+									if(response) {
+										block.html(response);
+									}
+								}
+							);
+						}
+					}
+
+
+				});
+			});
+		</script>
+	<?php endif; ?>
+<?php endif; ?>

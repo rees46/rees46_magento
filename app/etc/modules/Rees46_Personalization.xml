@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Personalization module config
+ *
+ * @author REES46
+ */
+-->
+<config>
+	<modules>
+		<Rees46_Personalization>
+			<active>true</active>
+			<codePool>community</codePool>
+			<depends>
+				<Mage_Adminhtml />
+			</depends>
+		</Rees46_Personalization>
+	</modules>
+</config>

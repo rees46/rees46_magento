@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento backend layout
+ *
+ * @author @rees46
+ */
+-->
+<layout>
+    <adminhtml_personalization_index>
+        <reference name="content">
+            <block type="rees46_personalization/adminhtml_personalization" name="personalization" />
+        </reference>
+    </adminhtml_personalization_index>
+</layout>
