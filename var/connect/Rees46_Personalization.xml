@@ -53,7 +53,7 @@ REES46 increases efficiency of e-commerce website up to 24% (in revenue).</descr
             <max/>
          </max>
          <files>
-            <files>           </files>
+            <files>            </files>
          </files>
       </package>
       <extension>
@@ -73,9 +73,9 @@ REES46 increases efficiency of e-commerce website up to 24% (in revenue).</descr
          <target>magelocal</target>
          <target>magecommunity</target>
          <target>magedesign</target>
-         <target>magelocal</target>
-         <target>magelocal</target>
-         <target>magelocal</target>
+         <target>magedesign</target>
+         <target>magedesign</target>
+         <target>magedesign</target>
          <target>mageetc</target>
          <target>magelocale</target>
       </target>
