@@ -9,14 +9,14 @@
 				var user_data = null;
 				<?php if (Mage::getSingleton('customer/session')->isLoggedIn()): ?>
 					var user_data = {
-						id: <?= Mage::getSingleton('customer/session')->getCustomer()->getID() ?>,
-						email: '<?= Mage::getSingleton('customer/session')->getCustomer()->getEmail() ?>'
+						id: <?php echo Mage::getSingleton('customer/session')->getCustomer()->getID() ?>,
+						email: '<?php echo Mage::getSingleton('customer/session')->getCustomer()->getEmail() ?>'
 					};
 				<?php endif; ?>
-				REES46.init('<?= $this->helper('rees46_personalization')->getAPIKey() ?>', user_data, function() {
+				REES46.init('<?php echo $this->helper('rees46_personalization')->getAPIKey() ?>', user_data, function() {
 					<?php $events = Mage::helper('rees46_personalization/event')->getEventsQueue(true) ?>
 					<?php foreach($events as $event): ?>
-						<? if($event['name'] == 'view' || $event['name'] == 'cart' || $event['name'] == 'remove_from_cart'): ?>
+						<?php if($event['name'] == 'view' || $event['name'] == 'cart' || $event['name'] == 'remove_from_cart'): ?>
 							REES46.pushData('<?php echo $event['name'] ?>', {
 								item_id: '<?php echo $event['data']['item_id'] ?>',
 								name: '<?php echo $event['data']['name'] ?>',
