@@ -50,7 +50,7 @@ class Rees46_Personalization_Helper_Data extends Mage_Core_Helper_Data
 
 
 	/**
-	 * Возвращает массив идентификаторов товаров, лежащих у пользователя в корзине
+	 * Returns ids array of products in customer's cart
 	 * @return array
 	 */
 	public function getCartProductIds() {

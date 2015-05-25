@@ -6,60 +6,60 @@
  */
 class Rees46_Personalization_Model_Observer
 {
-    /**
-     * Event after show product.
+	/**
+	 * Event after show product.
 	 * Used to track product views
-     *
-     * @param Varien_Event_Observer $observer
-     */
-    public function productViewed(Varien_Event_Observer $observer)
-    {
+	 *
+	 * @param Varien_Event_Observer $observer
+	 */
+	public function productViewed(Varien_Event_Observer $observer)
+	{
 		$product = $observer->getEvent()->getData('product');
 		if(!is_null($product)) {
 			$product_data = $this->_prepareCommonProductInfo($product);
 			Mage::helper('rees46_personalization/event')->pushEvent('view', $product_data);
 		}
-    }
+	}
 
 
-	 /**
-     * Event after product added to cart.
+	/**
+	 * Event after product added to cart.
 	 * Used to track product carts
-     *
-     * @param Varien_Event_Observer $observer
-     */
-    public function productAddedToCart(Varien_Event_Observer $observer)
-    {
+	 *
+	 * @param Varien_Event_Observer $observer
+	 */
+	public function productAddedToCart(Varien_Event_Observer $observer)
+	{
 		$product = $observer->getEvent()->getData('product');
 		if(!is_null($product)) {
 			$product_data = $this->_prepareCommonProductInfo($product);
 			Mage::helper('rees46_personalization/event')->pushEvent('cart', $product_data);
 		}
-    }
+	}
 
 
-	 /**
-     * Event after product removed from cart.
+	/**
+	 * Event after product removed from cart.
 	 * Used to track product carts
-     *
-     * @param Varien_Event_Observer $observer
-     */
-    public function productRemovedFromCart(Varien_Event_Observer $observer)
-    {
+	 *
+	 * @param Varien_Event_Observer $observer
+	 */
+	public function productRemovedFromCart(Varien_Event_Observer $observer)
+	{
 		$product = $observer->getEvent()->getQuoteItem()->getProduct();
 		if(!is_null($product)) {
 			$product_data = $this->_prepareCommonProductInfo($product);
 			Mage::helper('rees46_personalization/event')->pushEvent('remove_from_cart', $product_data);
 		}
-    }
+	}
 
-	 /**
-     * Event after order created.
-     *
-     * @param Varien_Event_Observer $observer
-     */
-    public function purchaseHappened(Varien_Event_Observer $observer)
-    {
+	/**
+	 * Event after order created.
+	 *
+	 * @param Varien_Event_Observer $observer
+	 */
+	public function purchaseHappened(Varien_Event_Observer $observer)
+	{
 		$order = $observer->getEvent()->getOrder();
 		if(!is_null($order)) {
 			$order_data = array(
@@ -75,14 +75,14 @@ class Rees46_Personalization_Model_Observer
 			}
 			Mage::helper('rees46_personalization/event')->pushEvent('purchase', $order_data);
 		}
-    }
+	}
 
 
 
 
 
 	/**
-	 * Подготавливает базовый массив данных о товаре для трекинга
+	 * Prepare base array of data about product for tracking
 	 * @param Mage_Catalog_Model_Product $product
 	 * @return array
 	 */
@@ -104,7 +104,7 @@ class Rees46_Personalization_Model_Observer
 			'url' => null,
 			'image_url' => $image,
 			'tags' => null,
-			// @todo: не забыть трекинг рекомендера
+			// @todo: do not forgot processing of recommender
 			'recommended_by' => null
 		);
 	}

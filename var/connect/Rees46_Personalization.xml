@@ -1,12 +1,11 @@
 <_>
-   <form_key>0wpS5unC9qubOVxU</form_key>
-   <_create/>
+   <form_key>4CX02MgKrtf8lUuR</form_key>
    <name>Rees46_Personalization</name>
    <channel>community</channel>
    <version_ids>
       <version_ids>2</version_ids>
    </version_ids>
-   <summary>REES46 analyzes customers activity and recommend them best goods they are willing to buy for greater conversion and ARPPU.</summary>
+   <summary>REES46 is free professional recommender system for e-commerce, with personalized merchandising, trigger and digest mailings, search personalization, etc. analyzes customers activity and recommend them best goods they are willing to buy for greater conversion and ARPPU.</summary>
    <description>Personal recommendations for e-commerce and e-mail notifications. Increases conversion rate and revenue without changing costs for advertisement. Automatically.
 
 Behaviour analysis: analyzes activity of every your customer an stores it anonymously. REES46 collects these actions: product view, product added or removed from cart, order created.
@@ -23,7 +22,7 @@ Then REES46 recommends appropriate products to every individual customer using b
 REES46 increases efficiency of e-commerce website up to 24% (in revenue).</description>
    <license>GNU</license>
    <license_uri/>
-   <version>3.2.6</version>
+   <version>3.2.7</version>
    <stability>stable</stability>
    <notes>Now get previews of photos to recommended products.</notes>
    <authors>
@@ -54,7 +53,7 @@ REES46 increases efficiency of e-commerce website up to 24% (in revenue).</descr
             <max/>
          </max>
          <files>
-            <files>     </files>
+            <files>           </files>
          </files>
       </package>
       <extension>
@@ -108,7 +107,7 @@ REES46 increases efficiency of e-commerce website up to 24% (in revenue).</descr
          <include/>
          <include/>
          <include/>
-         <include/>
+         <include>#Rees46_Personalization.csv#</include>
       </include>
       <ignore>
          <ignore/>

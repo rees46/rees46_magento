@@ -87,7 +87,7 @@
 					});
 
 					function REES46_Recommender_Callback(recommenderType, block, data) {
-						// @todo: ввести в настройках параметр минимального количества рекомендаций для отображения
+						// @todo: update settings – include parameter for limit minimum recommended items
 						var min_products = 1;
 						if(data.length > min_products) {
 							jQuery.get(

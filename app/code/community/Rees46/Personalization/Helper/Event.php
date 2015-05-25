@@ -10,7 +10,7 @@ class Rees46_Personalization_Helper_Event extends Mage_Core_Helper_Abstract
 	const REES46_SESSION_KEY_IDENTIFIER = 'rees46_events';
 
 	/**
-	 * Помещает информацию о событии в буфер для последующей отрисовки их в шаблоне
+	 * Collect event's data to buffer for future rendering in template
 	 * @param $name
 	 * @param $data
 	 */
