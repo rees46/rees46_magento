@@ -1,3 +1,5 @@
-<div class="rees46 rees46-recommend" data-type="popular" data-title="Популярные товары в этой категории" data-category="<?php echo Mage::registry('current_category')->getId() ?>"></div>
-<div class="rees46 rees46-recommend" data-type="recently_viewed" data-title="Вы недавно смотрели"></div>
-<div class="rees46 rees46-recommend" data-type="interesting" data-title="Возможно, вам это будет интересно"></div>
+<?php if (Mage::helper('rees46_personalization')->isExpertMode() != true): ?>
+	<div class="rees46 rees46-recommend" data-type="popular" data-title="Популярные товары в этой категории" data-category="<?php echo Mage::registry('current_category')->getId() ?>"></div>
+	<div class="rees46 rees46-recommend" data-type="recently_viewed" data-title="Вы недавно смотрели"></div>
+	<div class="rees46 rees46-recommend" data-type="interesting" data-title="Возможно, вам это будет интересно"></div>
+<?php endif; ?>

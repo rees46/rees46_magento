@@ -18,12 +18,14 @@
 
 Вся подготовка пакетов обновлений происходит через локальную установку CMS Magento. Предварительно стоит ознакомиться с [инструкцией по упаковке расширений](http://www.magentocommerce.com/wiki/7_-_magento_connect/creating_magento_connect_extension_package).
 
-1. В локальной версии Magento открыть меню System => Magento Connect => Package Extensions.
-2. Выбираем слева в меню "Load local extension" и кликаем на Rees46_Personalization в списке файлов.
-3. Меняем описание расширения.
-4. Нажимаем "Save data and create package". Получаем файл вида /var/connect/Rees46_Personalization-X.Y.Z.tgz
-5. Далее заходим в [личный кабинет разработчика Magento Commerce](http://www.magentocommerce.com/magento-connect/extension/extension/list).
-6. Загружаем полученный пакет файлов.
+1. В файле app/code/community/Rees46/Personalization/etc/config.xml изменить версию на новую.
+2. В локальной версии Magento открыть меню System => Magento Connect => Package Extensions.
+3. Выбираем слева в меню "Load local extension" и кликаем на Rees46_Personalization в списке файлов.
+4. Меняем описание расширения.
+5. Не забываем увеличить номер версии.
+6. Нажимаем "Save data and create package". Получаем файл вида /var/connect/Rees46_Personalization-X.Y.Z.tgz
+7. Далее заходим в [личный кабинет разработчика Magento Commerce](http://www.magentocommerce.com/magento-connect/extension/extension/list).
+8. Загружаем полученный пакет файлов.
 
 Используйте следующие значения полей при подготовке пакета расширения:
 
@@ -51,6 +53,10 @@ REES46 increases efficiency of e-commerce website up to 24% (in revenue).
 ```
 
 ## Версии
+
+### 3.2.8
+
+- Хм...
 
 ### 3.2.6
 

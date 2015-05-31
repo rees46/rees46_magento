@@ -1,1 +1,3 @@
-<div class="rees46 rees46-recommend" data-type="see_also" data-title="Не забудьте посмотреть"></div>
+<?php if (Mage::helper('rees46_personalization')->isExpertMode() != true): ?>
+	<div class="rees46 rees46-recommend" data-type="see_also" data-title="Не забудьте посмотреть"></div>
+<?php endif; ?>
