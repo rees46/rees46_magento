@@ -46,7 +46,15 @@ class Rees46_Personalization_BlockController extends Mage_Core_Controller_Front_
 		}
 
 		if( $minimum_recommended_products > 0 && count($products) >= $minimum_recommended_products ) {
-			$html = '<div class="rees46 rees46-recommend"><div class="recommender-block-title">' . Mage::helper('rees46_personalization')->__($recommender_type) . '</div><div class="recommended-items">';
+
+			// Get block title - from locale or from front-end
+			$block_title = Mage::helper('rees46_personalization')->__($recommender_type);
+			if($this->getRequest()->getParam('block_title')) {
+				$block_title = $this->getRequest()->getParam('block_title');
+			}
+
+			$html = '<div class="rees46 rees46-recommend"><div class="recommender-block-title">' . $block_title . '</div><div class="recommended-items">';
+
 			foreach($products as $product) {
 
 				// Specific settings cause problems with large photos, so find it another way

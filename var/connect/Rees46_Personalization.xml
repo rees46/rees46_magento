@@ -1,5 +1,5 @@
 <_>
-   <form_key>lDDyUowL337QQr1F</form_key>
+   <form_key>joo7xcvOncT8kGI4</form_key>
    <name>Rees46_Personalization</name>
    <channel>community</channel>
    <version_ids>
@@ -22,9 +22,9 @@ Then REES46 recommends appropriate products to every individual customer using b
 REES46 increases efficiency of e-commerce website up to 24% (in revenue).</description>
    <license>GNU</license>
    <license_uri/>
-   <version>3.3.0</version>
+   <version>3.3.1</version>
    <stability>stable</stability>
-   <notes>Expert Mode for manual placing of recommender blocks</notes>
+   <notes>Custom blocks titles</notes>
    <authors>
       <name>
          <name>REES46</name>
@@ -53,7 +53,7 @@ REES46 increases efficiency of e-commerce website up to 24% (in revenue).</descr
             <max/>
          </max>
          <files>
-            <files>               </files>
+            <files>                </files>
          </files>
       </package>
       <extension>
@@ -120,4 +120,8 @@ REES46 increases efficiency of e-commerce website up to 24% (in revenue).</descr
          <ignore/>
       </ignore>
    </contents>
+   <page>1</page>
+   <limit>200</limit>
+   <folder/>
+   <package/>
 </_>
