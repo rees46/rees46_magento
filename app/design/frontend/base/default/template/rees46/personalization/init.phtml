@@ -20,7 +20,6 @@
 							REES46.pushData('<?php echo $event['name'] ?>', {
 								item_id: '<?php echo $event['data']['item_id'] ?>',
 								name: '<?php echo $event['data']['name'] ?>',
-								description: '<?php echo $event['data']['description'] ?>',
 								price: '<?php echo $event['data']['price'] ?>',
 								is_available: '<?php echo intval($event['data']['is_available']) ?>',
 								categories: [<?php echo implode(',', $event['data']['categories']) ?>],
@@ -35,7 +34,6 @@
 									{
 										item_id: '<?php echo $product['item_id'] ?>',
 										name: '<?php echo $product['name'] ?>',
-										description: '<?php echo $product['description'] ?>',
 										price: '<?php echo $product['price'] ?>',
 										is_available: '<?php echo intval($product['is_available']) ?>',
 										categories: [<?php echo implode(',', $product['categories']) ?>],
