@@ -1,5 +1,5 @@
 <_>
-   <form_key>daXvZXnYkNyYrgGI</form_key>
+   <form_key>eXfpR1ZANJXMa8Oi</form_key>
    <name>Rees46_Personalization</name>
    <channel>community</channel>
    <version_ids>
@@ -22,9 +22,9 @@ Then REES46 recommends appropriate products to every individual customer using b
 REES46 increases efficiency of e-commerce website up to 24% (in revenue).</description>
    <license>GNU</license>
    <license_uri/>
-   <version>3.3.2</version>
+   <version>3.3.3</version>
    <stability>stable</stability>
-   <notes>Speed up events tracking</notes>
+   <notes>Solve issues with jQuery in version Magento 1.7</notes>
    <authors>
       <name>
          <name>REES46</name>
@@ -53,7 +53,7 @@ REES46 increases efficiency of e-commerce website up to 24% (in revenue).</descr
             <max/>
          </max>
          <files>
-            <files>                  </files>
+            <files>                   </files>
          </files>
       </package>
       <extension>

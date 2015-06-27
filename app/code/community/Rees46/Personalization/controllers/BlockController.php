@@ -26,6 +26,7 @@ class Rees46_Personalization_BlockController extends Mage_Core_Controller_Front_
 	{
 		$this->loadLayout();
 		$product_ids = $this->getRequest()->getParam('ids');
+		$product_ids = explode(',', $product_ids);
 		$recommender_type = $this->getRequest()->getParam('type');
 		$minimum_recommended_products = intval($this->getRequest()->getParam('minimum'));
 		$products = array();
@@ -51,6 +52,7 @@ class Rees46_Personalization_BlockController extends Mage_Core_Controller_Front_
 			$block_title = Mage::helper('rees46_personalization')->__($recommender_type);
 			if($this->getRequest()->getParam('block_title')) {
 				$block_title = $this->getRequest()->getParam('block_title');
+				$block_title = urldecode($block_title);
 			}
 
 			$html = '<div class="rees46 rees46-recommend"><div class="recommender-block-title">' . $block_title . '</div><div class="recommended-items">';
