@@ -76,7 +76,7 @@ class Rees46_Personalization_BlockController extends Mage_Core_Controller_Front_
 					<a href="' . $product_url . '">' . $product->getName() . '</a>
 				  </div>
 				  <div class="recommended-item-price">' . $product->getFormatedPrice() . '</div>
-				  <div class="recommended-item-action"><a href="' . $product_url . '">' . Mage::helper('rees46_personalization')->__('More info') . '</a></div>
+				  <div class="recommended-item-action"><a href="' . $product_url . '">' . Mage::helper('rees46_personalization')->__('More') . '</a></div>
 				</div>';
 			}
 			$html .= '</div></div>';
