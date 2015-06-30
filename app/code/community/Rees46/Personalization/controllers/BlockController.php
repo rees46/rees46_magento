@@ -71,7 +71,7 @@ class Rees46_Personalization_BlockController extends Mage_Core_Controller_Front_
 				}
 				$html .= '<div class="recommended-item">
 				  <div class="recommended-item-photo">
-					<a href="' . $product_url . '"><img src="' . Mage::helper('catalog/image')->init($productForImage, 'image')->resize(200, 200) . '"></a></div>
+					<a href="' . $product_url . '"><img src="' . $productForImage->getThumbnailUrl(200, 200) . '"></a></div>
 				  <div class="recommended-item-title">
 					<a href="' . $product_url . '">' . $product->getName() . '</a>
 				  </div>
