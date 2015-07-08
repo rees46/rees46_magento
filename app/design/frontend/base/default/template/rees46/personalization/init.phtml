@@ -94,7 +94,7 @@
 									ids: data,
 									type: recommenderType,
 									minimum: min_products,
-									block_title: block.data('title')
+									block_title: ( block.data('title') || '' )
 								},
 								function(response) {
 									if(response) {

@@ -1,5 +1,5 @@
 <?php if (Mage::helper('rees46_personalization')->isExpertMode() != true): ?>
-	<div class="rees46 rees46-recommend" data-type="also_bought" data-title="С этим товаром покупают" data-item="<?php echo Mage::registry('current_product')->getId() ?>"></div>
-	<div class="rees46 rees46-recommend" data-type="similar" data-title="Похожие товары" data-item="<?php echo Mage::registry('current_product')->getId() ?>"></div>
-	<div class="rees46 rees46-recommend" data-type="interesting" data-title="Возможно, вам это понравится" data-item="<?php echo Mage::registry('current_product')->getId() ?>"></div>
+	<div class="rees46 rees46-recommend" data-type="also_bought" data-item="<?php echo Mage::registry('current_product')->getId() ?>"></div>
+	<div class="rees46 rees46-recommend" data-type="similar" data-item="<?php echo Mage::registry('current_product')->getId() ?>"></div>
+	<div class="rees46 rees46-recommend" data-type="interesting" data-item="<?php echo Mage::registry('current_product')->getId() ?>"></div>
 <?php endif; ?>
