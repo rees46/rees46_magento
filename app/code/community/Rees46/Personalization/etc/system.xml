@@ -10,7 +10,7 @@
     <sections>
         <personalization>
             <class>separator-top</class>
-            <label>Personalization</label>
+            <label>REES46 Recommendations</label>
             <tab>general</tab>
             <frontend_type>text</frontend_type>
             <sort_order>500</sort_order>

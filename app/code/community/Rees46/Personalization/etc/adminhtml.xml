@@ -9,7 +9,7 @@
 <config>
     <menu>
          <personalization translate="title" module="rees46_personalization">
-            <title>Personalization</title>
+            <title>REES46 Recommendations</title>
             <sort_order>65</sort_order>
             <children>
                 <overview translate="title" module="rees46_personalization">
