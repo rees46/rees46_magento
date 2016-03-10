@@ -37,7 +37,7 @@ class Rees46_Personalization_BlockController extends Mage_Core_Controller_Front_
 			->addAttributeToFilter('entity_id', array('in' => $product_ids))
 			->addAttributeToSelect($attributes);
 
-		// Sort items as REES46 returned
+		/* Sort items as REES46 returned */
 		foreach($product_ids as $id) {
 			foreach($collection as $product) {
 				if($product->getId() == $id) {
@@ -48,7 +48,7 @@ class Rees46_Personalization_BlockController extends Mage_Core_Controller_Front_
 
 		if( $minimum_recommended_products > 0 && count($products) >= $minimum_recommended_products ) {
 
-			// Get block title - from locale or from front-end
+			/* Get block title - from locale or from front-end */
 			$block_title = Mage::helper('rees46_personalization')->__($recommender_type);
 			if($this->getRequest()->getParam('block_title')) {
 				$block_title = $this->getRequest()->getParam('block_title');
@@ -56,13 +56,12 @@ class Rees46_Personalization_BlockController extends Mage_Core_Controller_Front_
 			}
 
 			$html = '<div class="rees46 rees46-recommend"><div class="recommender-block-title">' . $block_title . '</div><div class="recommended-items">';
-
 			foreach($products as $product) {
 
-				// Specific settings cause problems with large photos, so find it another way
+				/* Specific settings cause problems with large photos, so find it another way */
 				$productForImage = Mage::getModel('catalog/product')->load($product->getId());
 
-				// Sometimes Magento adds special attributes to URL's, so add our attributes depending of this situation
+				/* Sometimes Magento adds special attributes to URL's, so add our attributes depending of this situation */
 				$product_url = $product->getProductUrl(false);
 				if( strpos($product_url, '?') !== false ) {
 					$product_url = str_replace('?', '?recommended_by=' . $recommender_type . '&	', $product_url);

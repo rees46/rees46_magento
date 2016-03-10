@@ -104,7 +104,7 @@ class Rees46_Personalization_Model_Observer
 			'url' => null,
 			'image_url' => $image,
 			'tags' => null,
-			// @todo: do not forgot processing of recommender
+			/* @todo: do not forgot processing of recommender */
 			'recommended_by' => null
 		);
 	}

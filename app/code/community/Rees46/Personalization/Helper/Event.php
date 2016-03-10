@@ -21,7 +21,6 @@ class Rees46_Personalization_Helper_Event extends Mage_Core_Helper_Abstract
 			'data' => $data
 		));
 		Mage::getSingleton('core/session')->setData(self::REES46_SESSION_KEY_IDENTIFIER, $events);
-//		var_dump($events);
 	}
 
 

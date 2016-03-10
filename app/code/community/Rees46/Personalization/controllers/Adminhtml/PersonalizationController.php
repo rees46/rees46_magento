@@ -13,20 +13,20 @@ class Rees46_Personalization_Adminhtml_PersonalizationController extends Mage_Ad
      */
     protected function _initAction()
     {
-        // load layout, set active menu and breadcrumbs
+        /* load layout, set active menu and breadcrumbs */
         $this->loadLayout()
             ->_setActiveMenu('personalization/overview')
             ->_addBreadcrumb(
-                  Mage::helper('rees46_personalization')->__('Personalization'),
-                  Mage::helper('rees46_personalization')->__('Personalization')
-              )
+                Mage::helper('rees46_personalization')->__('Personalization'),
+                Mage::helper('rees46_personalization')->__('Personalization')
+            )
             ->_addBreadcrumb(
-                  Mage::helper('rees46_personalization')->__('Overview'),
-                  Mage::helper('rees46_personalization')->__('Overview')
-              )
-		;
-		$this->_addContent($this->getLayout()->createBlock('adminhtml/template')->setTemplate('rees46/personalization/index.phtml'));
-		return $this;
+                Mage::helper('rees46_personalization')->__('Overview'),
+                Mage::helper('rees46_personalization')->__('Overview')
+            )
+        ;
+        $this->_addContent($this->getLayout()->createBlock('adminhtml/template')->setTemplate('rees46/personalization/index.phtml'));
+        return $this;
     }
 
     /**
@@ -34,8 +34,8 @@ class Rees46_Personalization_Adminhtml_PersonalizationController extends Mage_Ad
      */
     public function indexAction()
     {
-		$this->_title($this->__('Personalization'))
-			->_title($this->__('Overview'));
+        $this->_title($this->__('Personalization'))
+            ->_title($this->__('Overview'));
 
         $this->_initAction();
         $this->renderLayout();
