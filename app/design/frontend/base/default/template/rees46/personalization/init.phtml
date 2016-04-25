@@ -2,7 +2,7 @@
 	<?php $rees46_api_key = $this->helper('rees46_personalization')->getAPIKey(); ?>
 	<?php if($rees46_api_key != false): ?>
 		<!-- @rees46 -->
-		<script src="http://cdn.rees46.com/rees46_script2.js"></script>
+		<script src="//cdn.rees46.com/rees46_script2.js"></script>
 		<script type="text/javascript">
 			REES46_CART = <?php echo json_encode($this->helper('rees46_personalization')->getCartProductIds()); ?>;
 			jQuery(document).ready(function(){
