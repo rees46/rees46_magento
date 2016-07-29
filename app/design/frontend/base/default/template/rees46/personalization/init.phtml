@@ -14,6 +14,7 @@
 					};
 				<?php endif; ?>
 				REES46.init('<?php echo $this->helper('rees46_personalization')->getAPIKey() ?>', user_data, function() {
+					REES46.addStyleToPage();
 					<?php $events = Mage::helper('rees46_personalization/event')->getEventsQueue(true) ?>
 					<?php foreach($events as $event): ?>
 						<?php if($event['name'] == 'view' || $event['name'] == 'cart' || $event['name'] == 'remove_from_cart'): ?>

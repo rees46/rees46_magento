@@ -7,9 +7,6 @@
 		<reference name="before_body_end">
 			<block type="core/template" name="rees46_init" after="-" template="rees46/personalization/init.phtml"/>
 		</reference>
-		<reference name="before_body_end">
-			<block type="core/template" name="rees46_css" before="-" template="rees46/personalization/css.phtml"/>
-		</reference>
 	</default>
 
 	<!-- Home-->
