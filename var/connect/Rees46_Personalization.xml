@@ -1,39 +1,37 @@
 <_>
-   <form_key>eXfpR1ZANJXMa8Oi</form_key>
+   <form_key>bjPkSQPJcclfnFMu</form_key>
    <name>Rees46_Personalization</name>
    <channel>community</channel>
    <version_ids>
       <version_ids>2</version_ids>
    </version_ids>
    <summary>REES46 is free professional recommender system for e-commerce, with personalized merchandising, trigger and digest mailings, search personalization, etc. analyzes customers activity and recommend them best goods they are willing to buy for greater conversion and ARPPU.</summary>
-   <description>Personal recommendations for e-commerce and e-mail notifications. Increases conversion rate and revenue without changing costs for advertisement. Automatically.
+   <description>REES46 is an all-in-one marketing suite that can be applied to an e-commerce store of any size, demographic, or niche. Once set up, you can manage several tools from a central dashboard that will make your basic marketing processes easier to manage and follow up.
 
-Behaviour analysis: analyzes activity of every your customer an stores it anonymously. REES46 collects these actions: product view, product added or removed from cart, order created.
+Using REES46 you can easily:
 
-Then REES46 recommends appropriate products to every individual customer using blocks of recommended products:
-
-- Personalized Popular Products.
-- Personalized Similar Products.
-- Personalized Related Products.
-- Personalized Interesting Products.
-- Recently Viewed Products.
-- People Buying It Right Now.
-
-REES46 increases efficiency of e-commerce website up to 24% (in revenue).</description>
+Acquire more visitors using our advertising platform with extremely precise targeting.
+Convert your visitors into customers using personalized product recommendations and personalized search.
+Recover abandoned carts using triggered emails, web push notifications and remarketing.
+Induce repeat purchases through digest emails and push notifications with individual selections of recommended products.
+Gain customer feedback, product and store reviews to improve your store credibility and merchant reputation. </description>
    <license>GNU</license>
    <license_uri/>
-   <version>3.3.3</version>
+   <version>4.0.0</version>
    <stability>stable</stability>
-   <notes>Solve issues with jQuery in version Magento 1.7</notes>
+   <notes>Used JS SDK III</notes>
    <authors>
       <name>
+         <name>REES46</name>
          <name>REES46</name>
       </name>
       <user>
          <user>mkechinov</user>
+         <user>p0v1n0m</user>
       </user>
       <email>
          <email>kechinoff@gmail.com</email>
+         <email>ay@rees46.com</email>
       </email>
    </authors>
    <depends_php_min>5.2.1</depends_php_min>
@@ -53,7 +51,7 @@ REES46 increases efficiency of e-commerce website up to 24% (in revenue).</descr
             <max/>
          </max>
          <files>
-            <files>                   </files>
+            <files>                    </files>
          </files>
       </package>
       <extension>

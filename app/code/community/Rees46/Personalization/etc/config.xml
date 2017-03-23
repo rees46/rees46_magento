@@ -1,8 +1,13 @@
 <?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 REES46, INC. All rights reserved.
+ */
+-->
 <config>
 	<modules>
 		<Rees46_Personalization>
-			<version>3.3.7</version>
+			<version>4.0.0</version>
 		</Rees46_Personalization>
 	</modules>
 	<global>
@@ -139,5 +144,3 @@
 		</personalization>
 	</default>
 </config>
-		
-		

@@ -1,43 +1,13 @@
 <?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 REES46, INC. All rights reserved.
+ */
+-->
 <layout version="0.1.0">
-	<!-- @rees46 -->
-
-	<!-- All pages tracking -->
 	<default>
-		<reference name="before_body_end">
+		<reference name="head">
 			<block type="core/template" name="rees46_init" after="-" template="rees46/personalization/init.phtml"/>
 		</reference>
 	</default>
-
-	<!-- Home-->
-	<cms_index_index>
-		<reference name="content">
-			<block type="core/template" name="rees46_home" after="-" template="rees46/personalization/blocks/home.phtml" />
-		</reference>
-	</cms_index_index>
-
-
-	<!-- Category -->
-	<catalog_category_view translate="label">
-		<reference name="content">
-			<block type="core/template" name="rees46_category" after="category.products" template="rees46/personalization/blocks/category.phtml" />
-		</reference>
-	</catalog_category_view>
-
-	<!-- Product -->
-	<catalog_product_view translate="label">
-		<reference name="content">
-			<block type="core/template" name="rees46_product" after="-" template="rees46/personalization/blocks/product.phtml" />
-		</reference>
-	</catalog_product_view>
-
-	<!-- Cart -->
-	<checkout_cart_index translate="label">
-		<reference name="content">
-			<block type="core/template" name="rees46_cart" after="-" template="rees46/personalization/blocks/cart.phtml" />
-		</reference>
-	</checkout_cart_index>
-
 </layout>
-
-

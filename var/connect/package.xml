@@ -1,31 +1,26 @@
 <?xml version="1.0"?>
 <package>
     <name>Rees46_Personalization</name>
-    <version>3.3.3</version>
+    <version>4.0.0</version>
     <stability>stable</stability>
     <license>GNU</license>
     <channel>community</channel>
     <extends/>
     <summary>REES46 is free professional recommender system for e-commerce, with personalized merchandising, trigger and digest mailings, search personalization, etc. analyzes customers activity and recommend them best goods they are willing to buy for greater conversion and ARPPU.</summary>
-    <description>Personal recommendations for e-commerce and e-mail notifications. Increases conversion rate and revenue without changing costs for advertisement. Automatically.&#xD;
+    <description>REES46 is an all-in-one marketing suite that can be applied to an e-commerce store of any size, demographic, or niche. Once set up, you can manage several tools from a central dashboard that will make your basic marketing processes easier to manage and follow up.&#xD;
 &#xD;
-Behaviour analysis: analyzes activity of every your customer an stores it anonymously. REES46 collects these actions: product view, product added or removed from cart, order created.&#xD;
+Using REES46 you can easily:&#xD;
 &#xD;
-Then REES46 recommends appropriate products to every individual customer using blocks of recommended products:&#xD;
-&#xD;
-- Personalized Popular Products.&#xD;
-- Personalized Similar Products.&#xD;
-- Personalized Related Products.&#xD;
-- Personalized Interesting Products.&#xD;
-- Recently Viewed Products.&#xD;
-- People Buying It Right Now.&#xD;
-&#xD;
-REES46 increases efficiency of e-commerce website up to 24% (in revenue).</description>
-    <notes>Solve issues with jQuery in version Magento 1.7</notes>
-    <authors><author><name>REES46</name><user>mkechinov</user><email>kechinoff@gmail.com</email></author></authors>
-    <date>2015-06-27</date>
-    <time>13:05:45</time>
-    <contents><target name="magecommunity"><dir name="Rees46"><dir name="Personalization"><dir name="Helper"><file name="Admin.php" hash="2d31ca47bba5404e8b9d777027f70f48"/><file name="Data.php" hash="eecf1cab557b61ff3de492ca8d768ff2"/><file name="Event.php" hash="12f1e1ef5c3842f8752d34b18e3d0e6b"/></dir><dir name="Model"><file name="Observer.php" hash="3ca0fda3cf704eb3a82bc2935fb33640"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="PersonalizationController.php" hash="83cf76649e36fdf635836098c73b1310"/></dir><file name="BlockController.php" hash="675cc79707363685d6eae422332fd002"/></dir><dir name="etc"><file name="adminhtml.xml" hash="7d8c44125849ee7ba71b633604ee70ff"/><file name="config.xml" hash="a44c857825fab00939c03a84e23674cc"/><file name="system.xml" hash="4f47eecc2d1e161ae906cb511c5a2aff"/></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="rees46_personalization.xml" hash="55c2cd3a5a293270896c3c1e4ad3b677"/></dir><dir name="template"><dir name="rees46"><dir name="personalization"><file name="index.phtml" hash="87026c52a8d199d83d065c576679ebb6"/></dir></dir></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="rees46_personalization.xml" hash="55c2cd3a5a293270896c3c1e4ad3b677"/></dir><dir name="template"><dir name="rees46"><dir name="personalization"><dir name="blocks"><file name="cart.phtml" hash="ec4da21b7600e045494d8544cac02c06"/><file name="category.phtml" hash="56d802fa13893b477e5fcd81bf2d34a7"/><file name="home.phtml" hash="3a9812cb402d496f172870940df6a919"/><file name="product.phtml" hash="ac84646b85cd406af59ec65a0fdf1a7a"/></dir><file name="css.phtml" hash="dfe94f4cff6e314de18ce791ddb20455"/><file name="init.phtml" hash="8a1bf7c9245e66542438503e37d808e8"/></dir></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Rees46_Personalization.xml" hash="67bdc8c38ce74e98dda5d70a0943f2fe"/></dir></target><target name="magelocale"><dir><dir name="en_US"><file name="Rees46_Personalization.csv" hash="0169f9749d80016235f9c69c245f0976"/></dir><dir name="ru_RU"><file name="Rees46_Personalization.csv" hash="9a71f4c9cb704beb7bf698595ee9db13"/></dir></dir></target></contents>
+Acquire more visitors using our advertising platform with extremely precise targeting.&#xD;
+Convert your visitors into customers using personalized product recommendations and personalized search.&#xD;
+Recover abandoned carts using triggered emails, web push notifications and remarketing.&#xD;
+Induce repeat purchases through digest emails and push notifications with individual selections of recommended products.&#xD;
+Gain customer feedback, product and store reviews to improve your store credibility and merchant reputation. </description>
+    <notes>Used JS SDK III</notes>
+    <authors><author><name>REES46</name><user>mkechinov</user><email>kechinoff@gmail.com</email></author><author><name>REES46</name><user>p0v1n0m</user><email>ay@rees46.com</email></author></authors>
+    <date>2017-03-23</date>
+    <time>15:43:59</time>
+    <contents><target name="magecommunity"><dir name="Rees46"><dir name="Personalization"><dir name="Helper"><file name="Admin.php" hash="a01aceaba456186604b779c5920cafe9"/><file name="Data.php" hash="4896d769e47ba5c0896d0c8b2e7ec92d"/><file name="Event.php" hash="c50e9b22f08a3251602a3372d2622b65"/></dir><dir name="Model"><file name="Observer.php" hash="14f3fae00e741ffbaa6a9842a642d5c9"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="PersonalizationController.php" hash="b3ddd3bb3a8acc4df0034f1dc681b952"/></dir><file name="BlockController.php" hash="b393c157296eb4ffd52af2e69eeac4bc"/></dir><dir name="etc"><file name="adminhtml.xml" hash="051c97f0c45ce97134344590f930cd73"/><file name="config.xml" hash="81ae75517b240152cb9acdc27fffc4d2"/><file name="system.xml" hash="7d2293a79736ee4ffa30151cfd4ba28d"/></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="rees46_personalization.xml" hash="682bbcffec8a0933d64ef2910fc52bb0"/></dir><dir name="template"><dir name="rees46"><dir name="personalization"><file name="index.phtml" hash="f09eeb4522c3b5095591697fa92803af"/></dir></dir></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="rees46_personalization.xml" hash="ec585005bed91c3f5204122d6a9dcbc5"/></dir><dir name="template"><dir name="rees46"><dir name="personalization"><file name="init.phtml" hash="717be6d0b3d8aa5eec26a58c0ab13432"/></dir></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Rees46_Personalization.xml" hash="7b0cf94d20b8263561e8b63cf52d22ae"/></dir></target><target name="magelocale"><dir><dir name="en_US"><file name="Rees46_Personalization.csv" hash="eb3790f608f01c384916cc2660820987"/></dir><dir name="ru_RU"><file name="Rees46_Personalization.csv" hash="022b43e549a584556d1a68ea7901d7b9"/></dir></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.2.1</min><max>6.0.0</max></php></required></dependencies>
 </package>

@@ -1,12 +1,9 @@
 <?php
 /**
- * News Image Helper
- *
- * @author Magento
+ * Copyright © 2017 REES46, INC. All rights reserved.
  */
 class Rees46_Personalization_Helper_Event extends Mage_Core_Helper_Abstract
 {
-
 	const REES46_SESSION_KEY_IDENTIFIER = 'rees46_events';
 
 	/**
@@ -22,7 +19,6 @@ class Rees46_Personalization_Helper_Event extends Mage_Core_Helper_Abstract
 		));
 		Mage::getSingleton('core/session')->setData(self::REES46_SESSION_KEY_IDENTIFIER, $events);
 	}
-
 
 	/**
 	 * Return array of REES46 events storage
@@ -40,14 +36,10 @@ class Rees46_Personalization_Helper_Event extends Mage_Core_Helper_Abstract
 		return $events;
 	}
 
-
 	/**
 	 * Clear REES46 events storage
 	 */
 	public function clearEventsQueue() {
 		Mage::getSingleton('core/session')->unsetData(self::REES46_SESSION_KEY_IDENTIFIER);
 	}
-
-
-
 }

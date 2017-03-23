@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Magento admin config
- *
- * @author Magento
+ * Copyright © 2017 REES46, INC. All rights reserved.
  */
 -->
 <config>
@@ -20,7 +18,6 @@
             </children>
          </personalization>
     </menu>
-
     <acl>
         <resources>
             <admin>

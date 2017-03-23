@@ -1,8 +1,6 @@
 <?php
 /**
- * Personalizatoin module observer
- *
- * @author Magento
+ * Copyright © 2017 REES46, INC. All rights reserved.
  */
 class Rees46_Personalization_Model_Observer
 {
@@ -21,7 +19,6 @@ class Rees46_Personalization_Model_Observer
 		}
 	}
 
-
 	/**
 	 * Event after product added to cart.
 	 * Used to track product carts
@@ -36,7 +33,6 @@ class Rees46_Personalization_Model_Observer
 			Mage::helper('rees46_personalization/event')->pushEvent('cart', $product_data);
 		}
 	}
-
 
 	/**
 	 * Event after product removed from cart.
@@ -64,6 +60,7 @@ class Rees46_Personalization_Model_Observer
 		if(!is_null($order)) {
 			$order_data = array(
 				'order_id' => $order->getIncrementId(),
+				'order_price' => $order->getBaseGrandTotal(),
 				'products' => array()
 			);
 			$items = $order->getItemsCollection();
@@ -77,10 +74,6 @@ class Rees46_Personalization_Model_Observer
 		}
 	}
 
-
-
-
-
 	/**
 	 * Prepare base array of data about product for tracking
 	 * @param Mage_Catalog_Model_Product $product
@@ -88,24 +81,21 @@ class Rees46_Personalization_Model_Observer
 	 */
 	private function _prepareCommonProductInfo(Mage_Catalog_Model_Product $product) {
 		$images = $product->getMediaGalleryImages();
+
 		if($images && $images->count() > 0) {
 			$image = $images->getFirstItem()->getUrl();
 		} else {
 			$image = null;
 		}
+
 		return array(
-			'item_id' => $product->getId(),
-			'name' => $product->getName(),
-			'description' => $product->getDescription(),
-			'categories' => $product->getCategoryIds(),
+			'id' => $product->getId(),
+			'stock' => $product->isAvailable(),
 			'price' => $product->getSpecialPrice() ? $product->getSpecialPrice() : $product->getPrice(),
-			'is_available' => $product->isAvailable(),
-			'locations' => null,
-			'url' => null,
-			'image_url' => $image,
-			'tags' => null,
-			/* @todo: do not forgot processing of recommender */
-			'recommended_by' => null
+			'name' => $product->getName(),
+			'categories' => implode(',', $product->getCategoryIds()),
+			'image' => $image,
+			'url' => $product->getProductUrl(false),
 		);
 	}
 }

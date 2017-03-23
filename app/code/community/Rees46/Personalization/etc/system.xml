@@ -1,71 +1,59 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Magento admin configuratuib section config
- *
- * @author Magento
+ * Copyright © 2017 REES46, INC. All rights reserved.
  */
 -->
 <config>
-    <sections>
-        <personalization>
-            <class>separator-top</class>
-            <label>REES46 Recommendations</label>
-            <tab>general</tab>
-            <frontend_type>text</frontend_type>
-            <sort_order>500</sort_order>
-            <show_in_default>1</show_in_default>
-            <show_in_website>1</show_in_website>
-            <show_in_store>1</show_in_store>
-
-            <groups>
-                <view translate="label">
-                    <label>REES46 Settings</label>
-                    <frontend_type>text</frontend_type>
-                    <sort_order>10</sort_order>
-                    <show_in_default>1</show_in_default>
-                    <show_in_website>1</show_in_website>
-                    <show_in_store>1</show_in_store>
-                    <fields>
-                        <enabled translate="label">
-                            <label>Enable Personalization On Frontend</label>
-                            <frontend_type>select</frontend_type>
-                            <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>10</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </enabled>
-                        <api_key translate="label">
-                            <label>API Key</label>
-                            <comment>Put API key taken after registration in rees46.com here.</comment>
-                            <sort_order>30</sort_order>
-                            <depends><enabled>1</enabled></depends>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </api_key>
+	<sections>
+		<personalization>
+			<class>separator-top</class>
+			<label>REES46 Recommendations</label>
+			<tab>general</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>500</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<view translate="label">
+					<label>Settings</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<enabled translate="label">
+							<label>Enable Module</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</enabled>
+						<api_key translate="label">
+							<label>API Key</label>
+							<comment>Put API key taken after registration in rees46.com here.</comment>
+							<sort_order>20</sort_order>
+							<depends><enabled>1</enabled></depends>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</api_key>
 						<secret_key translate="label">
 							<label>Secret Key</label>
 							<comment>Put secret key taken after registration in rees46.com here.</comment>
-							<sort_order>50</sort_order>
+							<sort_order>30</sort_order>
 							<depends><enabled>1</enabled></depends>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
 						</secret_key>
-						<expert_mode translate="label">
-							<label>Manual Blocks Embed (see installation guide)</label>
-							<frontend_type>select</frontend_type>
-							<source_model>adminhtml/system_config_source_yesno</source_model>
-							<sort_order>80</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</expert_mode>
-                    </fields>
-                </view>
-            </groups>
-        </personalization>
-    </sections>
+					</fields>
+				</view>
+			</groups>
+		</personalization>
+	</sections>
 </config>
