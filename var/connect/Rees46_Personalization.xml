@@ -1,5 +1,5 @@
 <_>
-   <form_key>igPryiiOqT4Ztf0Z</form_key>
+   <form_key>TXNk12dm8FtX4OPp</form_key>
    <name>Rees46_Personalization</name>
    <channel>community</channel>
    <version_ids>
@@ -17,9 +17,9 @@ Induce repeat purchases through digest emails and push notifications with indivi
 Gain customer feedback, product and store reviews to improve your store credibility and merchant reputation. </description>
    <license>GNU</license>
    <license_uri/>
-   <version>4.1.0</version>
+   <version>4.1.1</version>
    <stability>stable</stability>
-   <notes>Added Spanish localisation.</notes>
+   <notes>Added localisations: french, german, finnish, italian, portuguese, swedish</notes>
    <authors>
       <name>
          <name>REES46</name>
@@ -51,7 +51,7 @@ Gain customer feedback, product and store reviews to improve your store credibil
             <max/>
          </max>
          <files>
-            <files>                     </files>
+            <files>                      </files>
          </files>
       </package>
       <extension>

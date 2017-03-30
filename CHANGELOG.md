@@ -1,5 +1,8 @@
 # Changelog
 
+## 4.1.1
+* Added localisations: french, german, finnish, italian, portuguese, swedish
+
 ## 4.1.0
 * Added Spanish localisation
 
