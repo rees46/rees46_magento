@@ -1,5 +1,8 @@
 # Changelog
 
+## 4.2.0
+* Fixed product data for tracking
+
 ## 4.1.1
 * Added localisations: french, german, finnish, italian, portuguese, swedish
 

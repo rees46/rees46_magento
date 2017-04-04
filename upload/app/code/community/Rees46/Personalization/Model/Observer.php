@@ -80,22 +80,9 @@ class Rees46_Personalization_Model_Observer
 	 * @return array
 	 */
 	private function _prepareCommonProductInfo(Mage_Catalog_Model_Product $product) {
-		$images = $product->getMediaGalleryImages();
-
-		if($images && $images->count() > 0) {
-			$image = $images->getFirstItem()->getUrl();
-		} else {
-			$image = null;
-		}
-
 		return array(
 			'id' => $product->getId(),
 			'stock' => $product->isAvailable(),
-			'price' => $product->getSpecialPrice() ? $product->getSpecialPrice() : $product->getPrice(),
-			'name' => $product->getName(),
-			'categories' => implode(',', $product->getCategoryIds()),
-			'image' => $image,
-			'url' => $product->getProductUrl(false),
 		);
 	}
 }
