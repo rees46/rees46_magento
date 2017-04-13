@@ -1,5 +1,8 @@
 # Changelog
 
+## 4.2.1
+* Fixed more product data for tracking
+
 ## 4.2.0
 * Fixed product data for tracking
 

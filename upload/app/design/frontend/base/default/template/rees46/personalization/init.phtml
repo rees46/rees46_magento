@@ -19,12 +19,7 @@ jQuery(document).ready(function() {
 	<?php if ($event['name'] == 'view'): ?>
 	r46('track', 'view', {
 		id: <?php echo $event['data']['id'] ?>,
-		stock: <?php echo intval($event['data']['stock']) ?>,
-		price: <?php echo $event['data']['price'] ?>,
-		name: '<?php echo $event['data']['name'] ?>',
-		categories: [<?php echo $event['data']['categories'] ?>],
-		image: '<?php echo $event['data']['image'] ?>',
-		url: '<?php echo $event['data']['url'] ?>'
+		stock: <?php echo intval($event['data']['stock']) ?>
 	});
 	<?php endif; ?>
 	<?php if ($event['name'] == 'cart'): ?>
@@ -37,7 +32,7 @@ jQuery(document).ready(function() {
 	r46('track', 'purchase', {
 		products: [
 			<?php foreach($event['data']['products'] as $product): ?>
-			{id: <?php echo $product['id'] ?>, price: <?php echo $product['price'] ?>, amount: <?php echo $product['amount'] ?>},
+			{id: <?php echo $product['id'] ?>, amount: <?php echo $product['amount'] ?>},
 			<?php endforeach; ?>
 		],
 		order: '<?php echo $event['data']['order_id'] ?>',
