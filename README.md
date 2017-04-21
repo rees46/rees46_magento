@@ -1,4 +1,8 @@
-# REES46 addon for CMS Magento 1
+# REES46 Extension for CMS Magento
+
+## Compatibility
+
+* Magento 1.9.x
 
 ## Documentation
 
@@ -6,9 +10,11 @@ English documentation: [http://docs.rees46.com/display/en/Magento+1.9.x+Extensio
 
 Русская документация: [http://docs.rees46.com/display/R46D/Magento+1.9.x](http://docs.rees46.com/display/R46D/Magento+1.9.x)
 
-## Compatibility
+## Support
 
-* Magento 1.9.x
+[support@rees46.com](mailto:support@rees46.com)
+
+
 
 ## Подготовка к разработке
 
