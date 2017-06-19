@@ -23,16 +23,16 @@ class Rees46_Personalization_BlockController extends Mage_Core_Controller_Front_
 	public function indexAction()
 	{
 		$this->loadLayout();
-		$products = array();
+		$products = [];
 
 		$product_ids = explode(',', $this->getRequest()->getParam('ids'));
-		$type = $this->getRequest()->getParam('type');
+		$type = Mage::helper('core')->escapeHtml($this->getRequest()->getParam('type'));
 		$limit = intval($this->getRequest()->getParam('limit'));
 
 		$attributes = Mage::getSingleton('catalog/config')->getProductAttributes();
 		$collection = Mage::getModel('catalog/product')
 			->getCollection()
-			->addAttributeToFilter('entity_id', array('in' => $product_ids))
+			->addAttributeToFilter('entity_id', ['in' => $product_ids])
 			->addAttributeToSelect($attributes);
 
 		/* Sort items as REES46 returned */
@@ -55,13 +55,11 @@ class Rees46_Personalization_BlockController extends Mage_Core_Controller_Front_
 				$title = Mage::helper('rees46_personalization')->__($type);
 			}
 
-			$html = '<div class="rees46 rees46-recommend"><div class="recommender-block-title">' . $title . '</div><div class="recommended-items">';
+			$html = '<div class="rees46 rees46-recommend"><div class="recommender-block-title">' . Mage::helper('core')->escapeHtml($title) . '</div><div class="recommended-items">';
 
 			foreach($products as $product) {
-				/* Specific settings cause problems with large photos, so find it another way */
 				$productForImage = Mage::getModel('catalog/product')->load($product->getId());
 
-				/* Sometimes Magento adds special attributes to URL's, so add our attributes depending of this situation */
 				$product_url = $product->getProductUrl(false);
 
 				if (strpos($product_url, '?') !== false) {

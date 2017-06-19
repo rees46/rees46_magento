@@ -13,10 +13,12 @@ class Rees46_Personalization_Helper_Event extends Mage_Core_Helper_Abstract
 	 */
 	public function pushEvent($name, $data) {
 		$events = $this->getEventsQueue();
-		array_push($events, array(
+
+		array_push($events, [
 			'name' => $name,
 			'data' => $data
-		));
+		]);
+
 		Mage::getSingleton('core/session')->setData(self::REES46_SESSION_KEY_IDENTIFIER, $events);
 	}
 
@@ -27,12 +29,15 @@ class Rees46_Personalization_Helper_Event extends Mage_Core_Helper_Abstract
 	 */
 	public function getEventsQueue($and_clear_queue = false) {
 		$events = Mage::getSingleton('core/session')->getData(self::REES46_SESSION_KEY_IDENTIFIER);
-		if(!is_array($events)) {
-			$events = array();
+
+		if (!is_array($events)) {
+			$events = [];
 		}
-		if($and_clear_queue) {
+
+		if ($and_clear_queue) {
 			$this->clearEventsQueue();
 		}
+
 		return $events;
 	}
 

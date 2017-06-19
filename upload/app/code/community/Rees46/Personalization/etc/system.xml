@@ -6,26 +6,57 @@
 -->
 <config>
 	<sections>
-		<personalization>
-			<class>separator-top</class>
-			<label>REES46 Recommendations</label>
+		<rees46>
+			<label>REES46 eCommerce Marketing Suite</label>
 			<tab>general</tab>
 			<frontend_type>text</frontend_type>
-			<sort_order>500</sort_order>
+			<sort_order>20</sort_order>
 			<show_in_default>1</show_in_default>
 			<show_in_website>1</show_in_website>
 			<show_in_store>1</show_in_store>
 			<groups>
-				<view translate="label">
-					<label>Settings</label>
+				<help translate="label">
+					<label>Help</label>
+					<comment><![CDATA[
+<table>
+	<tr>
+		<td>
+			Go to your REES46 store dashboard to get the access to:
+			<ul style="list-style: disc; padding-left: 40px;">
+				<li>Triggered emails</li>
+				<li>Email marketing tool</li>
+				<li>Personalized search</li>
+				<li>Web push triggered notifications</li>
+				<li>Instant web push notifications</li>
+				<li>Audience segmentation</li>
+				<li>Abandoned cart remarketing tool</li>
+			</ul><br>
+			<button onclick="window.open('https://rees46.com/customers/sign_in', '_blank'); return false;" class="primary">REES46 dashboard</button><br><br>
+			Documentation: <a href="http://docs.rees46.com/display/en/Magento+1.9.x+Extension" target="_blank">http://docs.rees46.com/display/en/Magento+1.9.x+Extension</a><br>
+			Support: <a href="mailto:support@rees46.com?subject=Support for REES46 Magento 1 extension">support@rees46.com</a>
+		</td>
+	</tr>
+</table>
+					]]></comment>
 					<frontend_type>text</frontend_type>
 					<sort_order>10</sort_order>
 					<show_in_default>1</show_in_default>
 					<show_in_website>1</show_in_website>
 					<show_in_store>1</show_in_store>
+					<expanded>1</expanded>
+				</help>
+				<settings translate="label">
+					<label>Settings</label>
+					<comment><![CDATA[To authorize, please log in on rees46.com and copy & paste Store Key and Secret Key from Store Settings (Dashboard > Settings > Store Settings) to the fields below.]]></comment>
+					<frontend_type>text</frontend_type>
+					<sort_order>20</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<expanded>1</expanded>
 					<fields>
 						<enabled translate="label">
-							<label>Enable Module</label>
+							<label>Enable</label>
 							<frontend_type>select</frontend_type>
 							<source_model>adminhtml/system_config_source_yesno</source_model>
 							<sort_order>10</sort_order>
@@ -34,8 +65,7 @@
 							<show_in_store>1</show_in_store>
 						</enabled>
 						<api_key translate="label">
-							<label>API Key</label>
-							<comment>Put API key taken after registration in rees46.com here.</comment>
+							<label>Store Key</label>
 							<sort_order>20</sort_order>
 							<depends><enabled>1</enabled></depends>
 							<show_in_default>1</show_in_default>
@@ -44,7 +74,6 @@
 						</api_key>
 						<secret_key translate="label">
 							<label>Secret Key</label>
-							<comment>Put secret key taken after registration in rees46.com here.</comment>
 							<sort_order>30</sort_order>
 							<depends><enabled>1</enabled></depends>
 							<show_in_default>1</show_in_default>
@@ -52,8 +81,8 @@
 							<show_in_store>1</show_in_store>
 						</secret_key>
 					</fields>
-				</view>
+				</settings>
 			</groups>
-		</personalization>
+		</rees46>
 	</sections>
 </config>

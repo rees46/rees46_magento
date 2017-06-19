@@ -4,24 +4,21 @@
  */
 class Rees46_Personalization_Helper_Data extends Mage_Core_Helper_Data
 {
-	/**
-	 * Path to store config if front-end output is enabled
-	 *
-	 * @var string
-	 */
-	const XML_PATH_ENABLED = 'personalization/view/enabled';
+	const REES46_ACTION_LEAD = 'rees46/actions/action_lead';
+	const REES46_ACTION_EXPORT = 'rees46/actions/action_export';
+	const REES46_ENABLED = 'rees46/settings/enabled';
+	const REES46_API_KEY = 'rees46/settings/api_key';
+	const REES46_API_SECRET = 'rees46/settings/secret_key';
 
-	/**
-	 * REES46 API Key
-	 * @var string
-	 */
-	const XML_PATH_API_KEY = 'personalization/view/api_key';
+	public function isLeadTracking($store = null)
+	{
+		return Mage::getStoreConfigFlag(self::REES46_ACTION_LEAD, $store);
+	}
 
-	/**
-	 * REES46 Secret Key
-	 * @var string
-	 */
-	const XML_PATH_SECRET_KEY = 'personalization/view/secret_key';
+	public function isExported($store = null)
+	{
+		return Mage::getStoreConfigFlag(self::REES46_ACTION_EXPORT, $store);
+	}
 
 	/**
 	 * Checks whether news can be displayed in the frontend
@@ -31,7 +28,7 @@ class Rees46_Personalization_Helper_Data extends Mage_Core_Helper_Data
 	 */
 	public function isEnabled($store = null)
 	{
-		return Mage::getStoreConfigFlag(self::XML_PATH_ENABLED, $store);
+		return Mage::getStoreConfigFlag(self::REES46_ENABLED, $store);
 	}
 
 	/**
@@ -40,8 +37,18 @@ class Rees46_Personalization_Helper_Data extends Mage_Core_Helper_Data
 	 * @return string
 	 */
 	public function getAPIKey($store = null) {
-		$api_key = Mage::getStoreConfig(self::XML_PATH_API_KEY, $store);
+		$api_key = Mage::getStoreConfig(self::REES46_API_KEY, $store);
 		return $api_key ? $api_key : false;
+	}
+
+	/**
+	 * Return REES46 Secret Key
+	 * @param integer|string|Mage_Core_Model_Store $store
+	 * @return string
+	 */
+	public function getSecretKey($store = null) {
+		$secret_key = Mage::getStoreConfig(self::REES46_API_SECRET, $store);
+		return $secret_key ? $secret_key : false;
 	}
 
 	/**
@@ -49,7 +56,14 @@ class Rees46_Personalization_Helper_Data extends Mage_Core_Helper_Data
 	 * @return array
 	 */
 	public function getCartProductIds() {
+		$ids = [];
+
 		$cart = Mage::getModel('checkout/cart')->getQuote();
-		return array_map(function($element){ return $element->getProductId(); }, $cart->getAllItems());
+
+		foreach ($cart->getAllVisibleItems() as $product) {
+			$ids[] = $product->getProductId();
+		}
+
+		return json_encode($ids);
 	}
 }

@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.3.0
+* Added HTTP API product export
+* Added help section
+* Added lead tracking
+* Removed overview page
+* Fixed output data
+* Namespace "personalization" renamed to rees46
+
 ## 4.2.1
 * Fixed more product data for tracking
 

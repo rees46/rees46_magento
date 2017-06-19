@@ -3,8 +3,7 @@
  * Copyright © 2017 REES46, INC. All rights reserved.
  */
 ?>
-<?php if (Mage::helper('rees46_personalization')->isEnabled() && $this->helper('rees46_personalization')->getAPIKey()): ?>
-<!-- BEGIN REES46 INIT -->
+<?php if (Mage::helper('rees46_personalization')->isEnabled() && $this->helper('rees46_personalization')->getAPIKey()): ?><!-- BEGIN REES46 INIT -->
 <script type="text/javascript">
 (function(r){window.r46=window.r46||function(){(r46.q=r46.q||[]).push(arguments)};var s=document.getElementsByTagName(r)[0],rs=document.createElement(r);rs.async=1;rs.src='//cdn.rees46.com/v3.js';s.parentNode.insertBefore(rs,s);})('script');
 r46('init', '<?php echo $this->helper('rees46_personalization')->getAPIKey(); ?>');
@@ -12,23 +11,24 @@ r46('add_css', 'recommendations');
 <?php if (Mage::getSingleton('customer/session')->isLoggedIn()): ?>
 r46('profile', 'set', {id: <?php echo Mage::getSingleton('customer/session')->getCustomer()->getID() ?>, email: '<?php echo Mage::getSingleton('customer/session')->getCustomer()->getEmail() ?>'});
 <?php endif; ?>
-REES46_CART = <?php echo json_encode($this->helper('rees46_personalization')->getCartProductIds()); ?>;
-
+REES46_CART = <?php echo $this->helper('rees46_personalization')->getCartProductIds(); ?>;
+REES46_PRODUCT = '<?php echo (Mage::registry('current_product') ? Mage::registry('current_product')->getId() : '') ?>';
+REES46_CATEGORY = '<?php echo (Mage::registry('current_category') ? Mage::registry('current_category')->getId() : '') ?>';
 jQuery(document).ready(function() {
-	<?php foreach(Mage::helper('rees46_personalization/event')->getEventsQueue(true) as $event): ?>
-	<?php if ($event['name'] == 'view'): ?>
+<?php foreach (Mage::helper('rees46_personalization/event')->getEventsQueue(true) as $event): ?>
+<?php if ($event['name'] == 'view'): ?>
 	r46('track', 'view', {
 		id: <?php echo $event['data']['id'] ?>,
 		stock: <?php echo intval($event['data']['stock']) ?>
 	});
-	<?php endif; ?>
-	<?php if ($event['name'] == 'cart'): ?>
+<?php endif; ?>
+<?php if ($event['name'] == 'cart'): ?>
 	r46('track', 'cart', <?php echo $event['data']['id'] ?>);
-	<?php endif; ?>
-	<?php if ($event['name'] == 'remove_from_cart'): ?>
+<?php endif; ?>
+<?php if ($event['name'] == 'remove_from_cart'): ?>
 	r46('track', 'remove_from_cart', <?php echo $event['data']['id'] ?>);
-	<?php endif; ?>
-	<?php if ($event['name'] == 'purchase'): ?>
+<?php endif; ?>
+<?php if ($event['name'] == 'purchase'): ?>
 	r46('track', 'purchase', {
 		products: [
 			<?php foreach($event['data']['products'] as $product): ?>
@@ -38,24 +38,22 @@ jQuery(document).ready(function() {
 		order: '<?php echo $event['data']['order_id'] ?>',
 		order_price: <?php echo $event['data']['order_price'] ?>
 	});
-	<?php endif; ?>
-	<?php endforeach; ?>
-	jQuery('.rees46.rees46-recommend').each(function(){
+<?php endif; ?>
+<?php endforeach; ?>
+	jQuery('.rees46.rees46-recommend').each(function() {
 		var recommenderBlock = jQuery(this);
 		var recommenderType = recommenderBlock.data('type');
 		switch(recommenderType) {
 			case 'interesting':
-			case 'also_bought':
-			case 'similar':
 			case 'recently_viewed':
 			case 'buying_now':
 			case 'supply':
-				r46('recommend', recommenderType, {item: recommenderBlock.data('item'), cart: [REES46_CART]}, function(results) {
+				r46('recommend', recommenderType, {item: REES46_PRODUCT, cart: [REES46_CART]}, function(results) {
 					REES46_Recommender_Callback(recommenderType, recommenderBlock, results);
 				});
 				break;
 			case 'popular':
-				r46('recommend', recommenderType, {category: recommenderBlock.data('category'), cart: [REES46_CART]}, function(results) {
+				r46('recommend', recommenderType, {category: REES46_CATEGORY, cart: [REES46_CART]}, function(results) {
 					REES46_Recommender_Callback(recommenderType, recommenderBlock, results);
 				});
 				break;
@@ -64,13 +62,21 @@ jQuery(document).ready(function() {
 					REES46_Recommender_Callback(recommenderType, recommenderBlock, results);
 				});
 				break;
+			case 'similar':
+			case 'also_bought':
+				if (REES46_PRODUCT != '') {
+					r46('recommend', recommenderType, {item: REES46_PRODUCT, cart: [REES46_CART]}, function(results) {
+						REES46_Recommender_Callback(recommenderType, recommenderBlock, results);
+					});
+				}
+				break;
 		}
 	});
 
 	function REES46_Recommender_Callback(recommenderType, block, data) {
 		if (data.length > 0) {
 			REES46RENDER(
-				'<?php echo Mage::helper('core/url')->getHomeUrl(); ?>personalization/block',
+				'<?php echo Mage::helper('core/url')->getHomeUrl(); ?>rees46/block',
 				{
 					ids: data,
 					type: recommenderType,
@@ -78,7 +84,7 @@ jQuery(document).ready(function() {
 					title: (block.data('title') || '')
 				},
 				function(response) {
-					if(response) {
+					if (response) {
 						block.html(response);
 					}
 				}

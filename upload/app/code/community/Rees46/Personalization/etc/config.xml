@@ -7,9 +7,41 @@
 <config>
 	<modules>
 		<Rees46_Personalization>
-			<version>4.2.1</version>
+			<version>4.3.0</version>
 		</Rees46_Personalization>
 	</modules>
+	<admin>
+		<translate>
+			<modules>
+				<Rees46_Personalization>
+					<files>
+						<default>Rees46_Personalization.csv</default>
+					</files>
+				</Rees46_Personalization>
+			</modules>
+		</translate>
+	</admin>
+	<adminhtml>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<rees46>
+											<title>REES46 eCommerce Marketing Suite</title>
+										</rees46>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
 	<global>
 		<models>
 			<rees46_personalization>
@@ -19,9 +51,9 @@
 			<personalization_resource>
 				<class>Rees46_Personalization_Model_Resource</class>
 				<entities>
-					<personalization>
+					<rees46>
 						<table>rees46_personalization</table>
-					</personalization>
+					</rees46>
 				</entities>
 			</personalization_resource>
 		</models>
@@ -44,9 +76,17 @@
 			</rees46_personalization_setup>
 		</resources>
 		<events>
-			<catalog_controller_product_view>
+			<controller_action_layout_load_before>
 				<observers>
 					<rees46_personalization>
+						<class>rees46_personalization/observer</class>
+						<method>leadTracking</method>
+					</rees46_personalization>
+				</observers>
+			</controller_action_layout_load_before>
+			<catalog_controller_product_view>
+				<observers>
+					<rees46_personalization ifconfig="rees46/settings/enabled">
 						<class>rees46_personalization/observer</class>
 						<method>productViewed</method>
 					</rees46_personalization>
@@ -54,7 +94,7 @@
 			</catalog_controller_product_view>
 			<checkout_cart_add_product_complete>
 				<observers>
-					<rees46_personalization>
+					<rees46_personalization ifconfig="rees46/settings/enabled">
 						<class>rees46_personalization/observer</class>
 						<method>productAddedToCart</method>
 					</rees46_personalization>
@@ -62,7 +102,7 @@
 			</checkout_cart_add_product_complete>
 			<sales_quote_remove_item>
 				<observers>
-					<rees46_personalization>
+					<rees46_personalization ifconfig="rees46/settings/enabled">
 						<class>rees46_personalization/observer</class>
 						<method>productRemovedFromCart</method>
 					</rees46_personalization>
@@ -70,7 +110,7 @@
 			</sales_quote_remove_item>
 			<sales_order_place_after>
 				<observers>
-					<rees46_personalization>
+					<rees46_personalization ifconfig="rees46/settings/enabled">
 						<class>rees46_personalization/observer</class>
 						<method>purchaseHappened</method>
 					</rees46_personalization>
@@ -93,7 +133,7 @@
 				<use>standard</use>
 				<args>
 					<module>Rees46_Personalization</module>
-					<frontName>personalization</frontName>
+					<frontName>rees46</frontName>
 				</args>
 			</rees46_personalization>
 		</routers>
@@ -105,42 +145,13 @@
 			</updates>
 		</layout>
 	</frontend>
-	<admin>
-		<translate>
-			<modules>
-				<Rees46_Personalization>
-					<files>
-						<default>Rees46_Personalization.csv</default>
-					</files>
-				</Rees46_Personalization>
-			</modules>
-		</translate>
-		<routers>
-			<adminhtml>
-				<args>
-					<modules>
-						<Rees46_Personalization before="Mage_Adminhtml">Rees46_Personalization_Adminhtml</Rees46_Personalization>
-					</modules>
-				</args>
-			</adminhtml>
-		</routers>
-	</admin>
-	<adminhtml>
-		<layout>
-			<updates>
-				<rees46_personalization>
-					<file>rees46_personalization.xml</file>
-				</rees46_personalization>
-			</updates>
-		</layout>
-	</adminhtml>
 	<default>
-		<personalization>
-			<view>
+		<rees46>
+			<settings>
 				<enabled>1</enabled>
 				<api_key></api_key>
 				<secret_key></secret_key>
-			</view>
-		</personalization>
+			</settings>
+		</rees46>
 	</default>
 </config>

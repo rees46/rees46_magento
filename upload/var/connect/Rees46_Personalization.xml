@@ -1,11 +1,11 @@
 <_>
-   <form_key>Bl8nNsSmUdG3fUJz</form_key>
+   <form_key>wMlgjAy9IHPGy3UC</form_key>
    <name>Rees46_Personalization</name>
    <channel>community</channel>
    <version_ids>
       <version_ids>2</version_ids>
    </version_ids>
-   <summary>REES46 is free professional recommender system for e-commerce, with personalized merchandising, trigger and digest mailings, search personalization, etc. analyzes customers activity and recommend them best goods they are willing to buy for greater conversion and ARPPU.</summary>
+   <summary>Marketing automation and progressive personalization suite to attract, convert and retain more customers. Boost your marketing efficiency with REES46.</summary>
    <description>REES46 is an all-in-one marketing suite that can be applied to an e-commerce store of any size, demographic, or niche. Once set up, you can manage several tools from a central dashboard that will make your basic marketing processes easier to manage and follow up.
 
 Using REES46 you can easily:
@@ -15,22 +15,24 @@ Convert your visitors into customers using personalized product recommendations 
 Recover abandoned carts using triggered emails, web push notifications and remarketing.
 Induce repeat purchases through digest emails and push notifications with individual selections of recommended products.
 Gain customer feedback, product and store reviews to improve your store credibility and merchant reputation. </description>
-   <license>GNU</license>
+   <license>MIT</license>
    <license_uri/>
-   <version>4.2.1</version>
+   <version>4.3.0</version>
    <stability>stable</stability>
-   <notes>Fixed more product data for tracking</notes>
+   <notes>Added HTTP API product export
+Added help section
+Added lead tracking
+Removed overview page
+Fixed output data
+Namespace &quot;personalization&quot; renamed to rees46</notes>
    <authors>
       <name>
          <name>REES46</name>
-         <name>REES46</name>
       </name>
       <user>
-         <user>mkechinov</user>
          <user>p0v1n0m</user>
       </user>
       <email>
-         <email>kechinoff@gmail.com</email>
          <email>ay@rees46.com</email>
       </email>
    </authors>
@@ -51,7 +53,7 @@ Gain customer feedback, product and store reviews to improve your store credibil
             <max/>
          </max>
          <files>
-            <files>                        </files>
+            <files>                         </files>
          </files>
       </package>
       <extension>
