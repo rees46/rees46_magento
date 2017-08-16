@@ -32,7 +32,7 @@ class Rees46_Personalization_Model_Observer
 				curl_setopt($ch, CURLOPT_HEADER, false);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
-				curl_setopt($ch, CURLOPT_URL, 'https://rees46.com/trackcms/magento?' . http_build_query($params));
+				curl_setopt($ch, CURLOPT_URL, 'https://app.rees46.com/trackcms/magento?' . http_build_query($params));
 				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
 				curl_exec($ch);
@@ -48,7 +48,7 @@ class Rees46_Personalization_Model_Observer
 					'yml_file_url' => Mage::helper('core/url')->getHomeUrl() . 'rees46/export'
 				];
 
-				Mage::helper('rees46_personalization/curl')->query('PUT', 'https://rees46.com/api/shop/set_yml', json_encode($curl_data));
+				Mage::helper('rees46_personalization/curl')->query('PUT', 'https://app.rees46.com/api/shop/set_yml', json_encode($curl_data));
 
 				Mage::getModel('core/config')->saveConfig('rees46/actions/action_export', true);
 			}

@@ -46,7 +46,7 @@ class Rees46_Personalization_ExportController extends Mage_Core_Controller_Front
 			}
 		}
 
-		$return = Mage::helper('rees46_personalization/curl')->query('POST', 'http://api.rees46.com/import/categories', json_encode($curl_data));
+		$return = Mage::helper('rees46_personalization/curl')->query('POST', 'https://api.rees46.com/import/categories', json_encode($curl_data));
 
 		if ($return['info']['http_code'] == 204) {
 			$this->_redirect('rees46/exportproduct');

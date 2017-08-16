@@ -31,8 +31,8 @@
 				<li>Audience segmentation</li>
 				<li>Abandoned cart remarketing tool</li>
 			</ul><br>
-			<button onclick="window.open('https://rees46.com/customers/sign_in', '_blank'); return false;" class="primary">REES46 dashboard</button><br><br>
-			Documentation: <a href="http://docs.rees46.com/display/en/Magento+1.9.x+Extension" target="_blank">http://docs.rees46.com/display/en/Magento+1.9.x+Extension</a><br>
+			<button onclick="window.open('https://app.rees46.com/customers/sign_in', '_blank'); return false;" class="primary">REES46 dashboard</button><br><br>
+			Documentation: <a href="https://docs.rees46.com/display/en/Magento+1.9.x+Extension" target="_blank">https://docs.rees46.com/display/en/Magento+1.9.x+Extension</a><br>
 			Support: <a href="mailto:support@rees46.com?subject=Support for REES46 Magento 1 extension">support@rees46.com</a>
 		</td>
 	</tr>

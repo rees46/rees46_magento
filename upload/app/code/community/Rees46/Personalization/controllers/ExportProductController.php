@@ -83,7 +83,7 @@ class Rees46_Personalization_ExportProductController extends Mage_Core_Controlle
 				'items' => $products
 			];
 
-			$return = Mage::helper('rees46_personalization/curl')->query('PUT', 'http://api.rees46.com/import/products', json_encode($curl_data));
+			$return = Mage::helper('rees46_personalization/curl')->query('PUT', 'https://api.rees46.com/import/products', json_encode($curl_data));
 
 			if ($return['info']['http_code'] == 204) {
 				if (count($products) == self::REES46_EXPORT_LIMIT) {

@@ -1,5 +1,8 @@
 # Changelog
 
+## 4.3.1
+* Fixed API links
+
 ## 4.3.0
 * Added HTTP API product export
 * Added help section

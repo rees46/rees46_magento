@@ -6,9 +6,9 @@
 
 ## Documentation
 
-English documentation: [http://docs.rees46.com/display/en/Magento+1.9.x+Extension](http://docs.rees46.com/display/en/Magento+1.9.x+Extension)
+English documentation: [https://docs.rees46.com/display/en/Magento+1.9.x+Extension](https://docs.rees46.com/display/en/Magento+1.9.x+Extension)
 
-Русская документация: [http://docs.rees46.com/display/R46D/Magento+1.9.x](http://docs.rees46.com/display/R46D/Magento+1.9.x)
+Русская документация: [https://docs.rees46.com/display/R46D/Magento+1.9.x](https://docs.rees46.com/display/R46D/Magento+1.9.x)
 
 ## Support
 
@@ -18,7 +18,7 @@ English documentation: [http://docs.rees46.com/display/en/Magento+1.9.x+Extensio
 
 MIT
 
-![magento](http://api.rees46.com/marker/magento)
+![magento](https://api.rees46.com/marker/magento)
 
 
 

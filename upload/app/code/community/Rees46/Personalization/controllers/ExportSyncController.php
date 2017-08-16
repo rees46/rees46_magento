@@ -52,7 +52,7 @@ class Rees46_Personalization_ExportSyncController extends Mage_Core_Controller_F
 				'items' => $products
 			];
 
-			$return = Mage::helper('rees46_personalization/curl')->query('POST', 'http://api.rees46.com/import/products', json_encode($curl_data));
+			$return = Mage::helper('rees46_personalization/curl')->query('POST', 'https://api.rees46.com/import/products', json_encode($curl_data));
 
 			if ($return['info']['http_code'] != 204) {
 				Mage::log('REES46: could not sync products (' . $return['info']['http_code'] . ').');

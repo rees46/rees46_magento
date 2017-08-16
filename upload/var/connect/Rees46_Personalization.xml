@@ -1,5 +1,5 @@
 <_>
-   <form_key>wMlgjAy9IHPGy3UC</form_key>
+   <form_key>pNyRgkdKkETsyQh3</form_key>
    <name>Rees46_Personalization</name>
    <channel>community</channel>
    <version_ids>
@@ -17,14 +17,9 @@ Induce repeat purchases through digest emails and push notifications with indivi
 Gain customer feedback, product and store reviews to improve your store credibility and merchant reputation. </description>
    <license>MIT</license>
    <license_uri/>
-   <version>4.3.0</version>
+   <version>4.3.1</version>
    <stability>stable</stability>
-   <notes>Added HTTP API product export
-Added help section
-Added lead tracking
-Removed overview page
-Fixed output data
-Namespace &quot;personalization&quot; renamed to rees46</notes>
+   <notes>Fixed API links</notes>
    <authors>
       <name>
          <name>REES46</name>
@@ -53,7 +48,7 @@ Namespace &quot;personalization&quot; renamed to rees46</notes>
             <max/>
          </max>
          <files>
-            <files>                         </files>
+            <files>                          </files>
          </files>
       </package>
       <extension>
@@ -120,8 +115,4 @@ Namespace &quot;personalization&quot; renamed to rees46</notes>
          <ignore/>
       </ignore>
    </contents>
-   <page>1</page>
-   <limit>200</limit>
-   <folder/>
-   <package/>
 </_>
